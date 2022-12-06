@@ -23,15 +23,7 @@ async function addStudent() {
         wohnort: wohnort.value,
         geburtstag: geburtstag.value
     }
-    const response = await fetch(baseUrl, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(newStudent)
-    })
-    const data = await response.json();
-    studentList.value.push(data);
+    await pb.collection('4bhk').create(newStudent);
     vorname.value = '';
     nachname.value = '';
     wohnort.value = '';
@@ -39,9 +31,7 @@ async function addStudent() {
     getStudents();
 }
 async function deleteStudent(id) {
-    await fetch(`${baseUrl}/${id}`, {
-        method: 'DELETE'
-    })
+    await pb.collection('4bhk').delete(id);
     getStudents();
 }
 </script>
