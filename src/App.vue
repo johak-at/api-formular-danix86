@@ -3,11 +3,12 @@
 import HelloJOHAK from "./components/HelloJOHAK.vue";
 import StudentList from "./components/StudentList.vue";
 import StudentListPocketbase from "./components/StudentListPocketbase.vue";
+import RealtimeChat from "./components/RealtimeChat/RealtimeChat.vue";
 </script>
 
 <template>
   <!-- Use your components here: -->
-  <StudentListPocketbase></StudentListPocketbase>
+  <RealtimeChat></RealtimeChat>
   <div>
     <p>
       built with <img src="/vite.svg" alt="vite-logo" /> &
